@@ -1146,7 +1146,7 @@ vbox = {
 						{
 							visible = "[Not(IsGameViewOpen('notes'))]"
 							onclick = "[ToggleGameView('notes')]"
-							tooltip = "[SelectLocalization( InGameTopbar.IsTutorialActive, 'TUTORIAL_NOTES_MENU', 'NOTES_MENU' )]"
+							tooltip = "NOTES_MENU"
 							shortcut = "top_bar_13"
 							enabled = "[Not( InGameTopbar.IsTutorialActive )]"
 							clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_click"

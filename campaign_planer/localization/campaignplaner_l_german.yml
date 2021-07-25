@@ -1,0 +1,5 @@
+﻿l_german:
+  NOTES_MENU:0 "#T Notizen#!\nNotiert Euch hier eure #Y Schlachtpläne#! und #Y Strategien#!."
+  NOTES_MENU_HEADER:0 "Notizen"
+  NOTES_VIEW:0 "Notizen"
+  PREVIOUS_NOTES_VIEW:0 "#T Zur Ansicht [ReligionView.GetPreviousName] zurückkehren#!"

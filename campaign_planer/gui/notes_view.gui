@@ -1,74 +1,40 @@
-@windowwidth = 724
-@windowheight = 900
-
 base_window = {
 	gfxtype = windowgfx
 	name = "notes_view"
 	parentanchor = top|left
 	widgetanchor = top|left
-	size = { @windowwidth @windowheight }
-	position = { 60 138 }
+	size = { 700 900 }
+	position = { 5 120 }
 	movable = no
 
-	state = {
-		name = _show
-		start_sound = {
-			soundeffect = "event:/SFX/UI/Generic/2.0/sfx_ui_window_tab_close"
+	widget = {
+		name = "background"
+		using = Large_window_type
+		size = { 100% 100% }
+		alwaystransparent = yes
+		
+		blockoverride "header"
+		{
+			text = "NOTES_VIEW"
 		}
 	}
 
-	state = {
-		name = _hide
-		start_sound = {
-			soundeffect = "event:/SFX/UI/Generic/2.0/sfx_ui_window_tab_close"
-		}
+	square_close_button = {
+		name = "close_button"
+		position = { -12 12 }
+		parentanchor = top|right
+		shortcut = "close_window"
+		onclick = "[ReligionView.OnClose]"
+		onclick = "[PdxGuiTriggerAllAnimations('close_reliquary')]"
+		tooltip = "CLOSE"
 	}
-
-	vbox = {
-		using = MainWindowHeaderBox
-		name = "main window box with main header"
-
-		blockoverride "FlagOrIcon"
-		{
-			icon = {
-				texture = "gfx/interface/base_parts/yellow_button_color_200fs.dds"
-				framesize = { 100 100 }
-				frame = 6
-				position = { -2 -2 }
-				size = { 32 32 }
-				modify_texture = {
-					texture = "gfx/interface/icons/menu_buttons/menu_notes.dds"
-					blend_mode = alphamultiply
-				}
-			}
-		}
-
-		blockoverride "Title_text"
-		{
-			text = "NATION_NOTES_MENU_HEADER"
-		}
-
-		blockoverride "White_buttons"
-		{
-			button_back = {
-				shortcut = "previous_window"
-				onclick = "[NotesView.OnPrevious]"
-				tooltip = "PREVIOUS_NOTES_VIEW"
-			}
-
-			button_close = {
-				onclick = "[NotesView.OnClose]"
-				tooltip = "CLOSE"
-				shortcut = "close_window"
-			}
-		}
-
-		vbox = {
-			name = "box for the vertically stacked boxes"
-			layoutpolicy_vertical = expanding
-			layoutpolicy_horizontal = expanding
-			margin = { 14 6 }
-		}
-
+	
+	left_arrow_button = {
+		name = "previous_button"
+		position = { 144 14 }
+		parentanchor = top|left
+		shortcut = "previous_window"
+		onclick = "[ReligionView.OnPrevious]"
+		tooltip = "PREVIOUS_RELIGION_VIEW"
 	}
 }
